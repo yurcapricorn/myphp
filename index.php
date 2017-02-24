@@ -2,8 +2,9 @@
 
 include __DIR__ . '/autoload.php';
 
-$db = new Db();
-$data=$db->query('SELECT * from foo');
-echo '<ret>';
+//$user = new \App\Models\User();
+$data=\App\Models\User::findAll();
+
+echo '<pre>';
 var_dump($data);
-echo '</ret>';
+echo '</pre>';

@@ -1,6 +1,6 @@
 <?php
 
-namespace \App;
+namespace App;
 
 class Db
 {
@@ -14,11 +14,14 @@ class Db
             $res=$sth->execute();
             return $res;
         }
-        public function query($sql){
+        public function query($sql, $class = ''){
             $sth=$this->dbh->prepare($sql);
             $res=$sth->execute();
             if (false!==$res){
-                return $sth->fetchAll();
+                if ($class==''){
+                    return $sth->fetchAll();
+                }
+                else {return $sth->fetchAll(\PDO::FETCH_CLASS, $class);}
             }
             return [];
         }
