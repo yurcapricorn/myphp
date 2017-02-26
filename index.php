@@ -2,7 +2,7 @@
 
 include __DIR__ . '/autoload.php';
 
-\App\Models\News::displayOne(1);
+\App\Models\News::displayAll();
 
 //echo '<pre>';
 //var_dump($data);
