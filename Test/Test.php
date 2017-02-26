@@ -10,21 +10,35 @@ namespace Test;
 
 class Test
 {
-    static public function dbTestExecute(){
+    private static function dbTestExecute(){
         $db = new \App\Db();
         $sql='SELECT * FROM user WHERE id>:id';
         $args=[':id'=>0];
         $res=$db->execute($sql,$args);
-        return $res;
+        if ($res==false){echo 'dbTestExecute Error';}
     }
 
-    static public function dbTestQuery(){
+    private static function dbTestQuery(){
         $db = new \App\Db();
         $sql="SELECT * FROM user WHERE id>:id";
         $args=[':id'=>0];
         $res=$db->query($sql,$args);
-        return $res;
+        if (empty($res)){echo 'dbTestQuery Error';}
     }
 
+    private static function modelTestFindById(){
+        $id=1;
+        $data=\App\Models\User::findById($id);
+        if ($data==false){echo 'modelTestFindById Error';}
+        $id=0;
+        $data=\App\Models\User::findById($id);
+        if ($data!=false){echo 'modelTestFindById Error';}
+    }
+
+    public static function dbTest(){
+        static::dbTestExecute();
+        static::dbTestQuery();
+        static::modelTestFindById();
+    }
 
 }

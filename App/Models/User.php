@@ -14,6 +14,8 @@ use App\Model;
 class User extends Model
 {
     const TABLE = 'user';
+    const INDEX = 'user_index';
+    const ONE = 'user';
     public $email;
     public $name;
 

@@ -2,13 +2,10 @@
 
 include __DIR__ . '/autoload.php';
 
-$data=\App\Models\User::findAll();
+\App\Models\News::displayOne(1);
 
-echo '<pre>';
-var_dump($data);
-echo '</pre>';
+//echo '<pre>';
+//var_dump($data);
+//echo '</pre>';
 
-$res=Test\Test::dbTestExecute();
-var_dump($res);
-$res=Test\Test::dbTestQuery();
-var_dump($res);
+Test\Test::dbTest();
