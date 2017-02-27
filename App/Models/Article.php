@@ -1,15 +1,7 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: user
- * Date: 26-Feb-17
- * Time: 18:34
- */
 
 namespace App\Models;
 
-
-use App\Db;
 use App\Model;
 
 class Article extends Model
@@ -25,6 +17,25 @@ class Article extends Model
 
     public function __construct($id)
     {
+        $article=static::findById($id);
+        $article = $article[0];
+        var_dump($article);
+        foreach($article as $key=>$value) {
+            if ($key==$this->id){$this->id = $value;}
+            if ($key==$this->author){$this->author = $value;}
+            if ($key==$this->header){$this->header = $value;}
+            if ($key==$this->body){$this->body = $value;}
+            if ($key==$this->date){$this->date = $value;}
+            //public $author;
+            //public $header;
+            //public $body;
+            //public $date;
+            //echo 'this->id = ' . $this->id;
+        }
+
+
+
+
 
     }
 }
