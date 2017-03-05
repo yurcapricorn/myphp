@@ -15,6 +15,7 @@ class User extends Model
     const TABLE = 'user';
     const INDEX = 'user_index';
     const ONE = 'user';
+    const CLAS = 'App\Models\User';
     public $email;
     public $name;
 

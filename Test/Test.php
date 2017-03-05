@@ -12,7 +12,7 @@ class Test
 {
     private static function dbTestExecute(){
         $db = new \App\Db();
-        $sql='SELECT * FROM user WHERE id>:id';
+        $sql='SELECT * FROM news WHERE id>:id';
         $args=[':id'=>0];
         $res=$db->execute($sql,$args);
         if ($res==false){echo 'dbTestExecute Error';}
@@ -20,7 +20,7 @@ class Test
 
     private static function dbTestQuery(){
         $db = new \App\Db();
-        $sql="SELECT * FROM user WHERE id>:id";
+        $sql="SELECT * FROM news WHERE id>:id";
         $args=[':id'=>0];
         $res=$db->query($sql,$args);
         if (empty($res)){echo 'dbTestQuery Error';}
@@ -28,10 +28,10 @@ class Test
 
     private static function modelTestFindById(){
         $id=1;
-        $data=\App\Models\User::findById($id);
+        $data=\App\Models\Article::findById($id);
         if ($data==false){echo 'modelTestFindById Error';}
         $id=0;
-        $data=\App\Models\User::findById($id);
+        $data=\App\Models\Article::findById($id);
         if ($data!=false){echo 'modelTestFindById Error';}
     }
 

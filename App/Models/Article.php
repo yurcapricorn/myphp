@@ -15,7 +15,7 @@ class Article extends Model
     public $body;
     public $date;
 
-    public function __construct($id)
+    public function __construct($id=1)
     {
         $article=static::findById($id);
         $article = $article[0];

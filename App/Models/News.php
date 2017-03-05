@@ -7,6 +7,7 @@ use App\Model;
 class News extends Model
 {
     const TABLE = 'news';
-    const INDEX = '\App\Templates\news_index.php';
-    const ONE = '\App\Templates\article.php';
+    const INDEX = '\Templates\news_index.php';
+    const ONE = '\Templates\article.php';
+    const CLAS = 'App\Models\News';
 }

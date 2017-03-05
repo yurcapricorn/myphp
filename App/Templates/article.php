@@ -9,4 +9,4 @@ foreach ($data[0] as $key => $value) {
 }
 //header('Location: article.php?id=' . $id);
 
-echo '<a href=index.php>Back to the main page</a>';
+//echo '<a href=index.php>Back to the main page</a>';
