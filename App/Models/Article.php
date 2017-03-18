@@ -15,27 +15,31 @@ class Article extends Model
     public $body;
     public $date;
 
-    public function __construct($id=1)
+    public function __construct($mas)
     {
-        $article=static::findById($id);
-        $article = $article[0];
-        var_dump($article);
-        foreach($article as $key=>$value) {
-            if ($key==$this->id){$this->id = $value;}
-            if ($key==$this->author){$this->author = $value;}
-            if ($key==$this->header){$this->header = $value;}
-            if ($key==$this->body){$this->body = $value;}
-            if ($key==$this->date){$this->date = $value;}
-            //public $author;
-            //public $header;
-            //public $body;
-            //public $date;
-            //echo 'this->id = ' . $this->id;
+        for ($i = 0; $i < 5; $i++) {
+            switch ($mas[$i]['name']) {
+                case'id': {
+                    $this->id = $mas[$i]['value'];
+                    break;
+                }
+                case'author': {
+                    $this->author = $mas[$i]['value'];
+                    break;
+                }
+                case'header': {
+                    $this->header = $mas[$i]['value'];
+                    break;
+                }
+                case'body': {
+                    $this->body = $mas[$i]['value'];
+                    break;
+                }
+                case'date': {
+                    $this->date = $mas[$i]['value'];
+                    break;
+                }
+            }
         }
-
-
-
-
-
     }
 }
