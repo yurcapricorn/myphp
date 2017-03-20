@@ -85,7 +85,7 @@ abstract class Model
     public function delete(){
         $sql='DELETE FROM ' . static::TABLE . ' WHERE id=' . $this->id;
         $db = new Db();
-        $db->execute($sql, $val);
+        $db->execute($sql);
     }
 
     public static function dbElementCount(){
